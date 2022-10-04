@@ -16,6 +16,7 @@
     var questions = 0
     var score = 0
     var secondsLeft = 60
+    var startBtn = document.querySelector(".startButton");
     var timeEL = document.querySelector(".time");
     var questions = [
     {
@@ -46,16 +47,6 @@ function start() {
         document.getElementById("timeRemaining").innerHTML = secondsLeft;
 }
 
-//timer logic to count down by 1 second (1000 milliseconds), game will end when timer reaches 0
-
-countDown = setInterval(function () {
-    secondsLeft--;
-    document.getElementById("timeRemaining").innerHTML = secondsLeft;
-    if (secondsLeft <= 0) {
-        clearInterval(countDown);
-        endgame();
-    }
-}, 1000);
 
 //function to end the game by stopping the timer
 
@@ -68,8 +59,18 @@ function endgame() {
 
 
 //add on click event listener to button
-start.addEventListener("click", (e) => {
+//timer logic to count down by 1 second (1000 milliseconds), game will end when timer reaches 0
+
+startBtn.addEventListener("click", (e) => {
     e.preventDefault();
+    var countDown = setInterval(function () {
+        secondsLeft--;
+        document.getElementById("timeRemaining").innerHTML = secondsLeft;
+        if (secondsLeft <= 0) {
+            clearInterval(countDown);
+            endgame();
+        }
+    }, 1000);
 })
 
 
