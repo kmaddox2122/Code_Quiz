@@ -1,0 +1,140 @@
+//declare variables 
+//should include but not limited to: SCORE/CURRENT QUESTION/TIME REMAINING/ TIMER. 
+    //ex: var score = 0; 
+    //starting score should start at 0. 
+​
+//questions array. 
+//ex: 
+var questions = [{
+    title: 
+    choices: 
+    answer: 
+}]
+​
+//when user clicks start, countdown begins
+//end game if timer is at 0
+//ex:
+function start(){
+    //create variable for time remaining
+    //document.getElementById('').innerHTML to set HTML content to your time remaining variable.
+    //should look something like this example: 
+        //let text = "Hello Dolly.";
+          document.getElementById("myP").innerHTML = text;
+    //source: https://www.w3schools.com/jsref/prop_html_innerhtml.asp
+}
+​
+// create timer logic using the setInterval JS function. 
+// the setInterval() method calls a function at specified intervals (in milliseconds).
+//the setInterval() method continues calling the function until clearInterval() is called, or the window is closed.
+//1 second = 1000 milliseconds.
+// source: https://www.w3schools.com/jsref/met_win_setinterval.asp
+//ex: 
+    //timer = setInterval(function () {
+        //use (--) to decrement from time remaining.
+        //document.getElementById('').innerHTML to set HTML content to your time remaining variable
+        //create: if time left is at 0, clear the timer interval and end the game.
+            ex: if (timeRemaining <=0){
+                    clearInterval(timer);
+                    //add some sort of function here to end the game using clearInterval. 
+            }
+            //add some sort of function here to indicate next question! 
+                ex: function nextQuestion(){
+                    currentQuestion ++;
+​
+                    //add if statement here to add logic for when users are on the last question. 
+                    //ex: if (currentQuestion > questions.length -1 ){
+                        //some sort of function to end the game;
+                        return;
+                    }
+                } 
+        }, 1000);
+    //source: https://www.w3schools.com/jsref/prop_html_innerhtml.asp
+​
+//if game ends, user can input their name as their scores reveal.
+//use template literal to map this out (https://www.w3schools.com/js/js_string_templates.asp)
+ex: let quizContent = `
+<h2>Game over!</h2>
+`
+//include an input field for users to add their name
+//include a way show users their raw scores (use math.ceiling)
+//include a button onclick so users can submit their information for the high score board. 
+​
+//create a function to store scores on local storage
+//ex: function setScore(){
+    localStorage.setItem("key", "value");
+    localStorage.setItem("key", "documnt.getElementById('").value;
+    setScore();
+}
+//source: https://www.w3schools.com/jsref/prop_win_localstorage.asp
+​
+//create a function to get score using template literals 
+//ex: function getScore(){
+    var quizContent = `
+    <h2>` + localStorage.getItem("set key") + `</h2> 
+    `
+}
+//source: https://www.w3schools.com/jsref/prop_win_localstorage.asp
+​
+//create function to reset the game by clearing interval as well as variables. 
+​
+//create function to add logic: if user answers incorrectly deduct x points.
+​
+//create function to add logic: increase score if answered correctly
+​
+Collapse
+
+
+
+white_check_mark
+eyes
+raised_hands
+
+code from class lesson:
+
+// Selects element by class
+var timeEl = document.querySelector(".time");
+
+// Selects element by id
+var mainEl = document.getElementById("main");
+
+var secondsLeft = 10;
+
+function setTime() {
+  // Sets interval in variable
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
+
+    if(secondsLeft === 0) {
+      // Stops execution of action at set interval
+      clearInterval(timerInterval);
+      // Calls function to create and append image
+      sendMessage();
+    }
+
+  }, 1000);
+}
+
+// Function to create and append colorsplosion image
+function sendMessage() {
+  timeEl.textContent = " ";
+  var imgEl = document.createElement("img");
+  imgEl.setAttribute("src", "images/image_1.jpg");
+  mainEl.appendChild(imgEl);
+
+}
+
+setTime();
+
+
+
+
+
+
+
+
+
+
+
+
+

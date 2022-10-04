@@ -1,4 +1,6 @@
-//challenge #4 notes
+//challenge #4 
+
+//pseudocode:
 //start button- timer begins when pressed
 //DOM manipulation to disply question and answers to quiz
 //when a question is answered, another question populates
@@ -7,34 +9,80 @@
 //use if/else to determine when the game is over -- all q's answered or timer reaches 0
 //save initials and score when game is over
     //local storage to save data
-var questions = [
+
+// variables
+
+    var time = 0
+    var questions = 0
+    var score = 0
+    var secondsLeft = 60
+    var timeEL = document.querySelector(".time");
+    var questions = [
     {
-        question:"question 1 written out",
-        answer1:"answer 1 written out",
-        answer2:"answer 2 written out",
-        answer3:"answer 3 written out",
-        answer4:"answer 4 written out",
+        question:"What is an array?",
+        answer1:"a single variable that is used to store different elements",
+        answer2:"a ray of sunshine",
+        answer3:"a rainbow",
+        answer4:"a name short for 'Raymond'.",
         correctAnswer: this.answer1 //or copy text from answer1
     },
     {
-        question:"question 2 written out",
-        answer1:"answer 1 written out",
-        answer2:"answer 2 written out",
-        answer3:"answer 3 written out",
-        answer4:"answer 4 written out",
-        correctAnswer: this.answer1 //or copy text from answer1
+        question:"What does 'URL' stand for?",
+        answer1:"Uniform Romeo Lima",
+        answer2:"Unicorns R Lame",
+        answer3:"Under Real Locations",
+        answer4:"Uniform Resource Locator",
+        correctAnswer: this.answer4 //or copy text from answer4
     }
-]
-function startQuiz() {
-    console.log("Hello");
-    //start timer
-    //display question and answers- using DOM manip.
-    var firstQuestion = document.querySelector("#firstQuestion");
-    firstQuestion.textContent = questions[0].question
 
-    // use queryselector for answers
+]
+
+// code for timer below
+
+//function to start timer 
+
+function start() {
+        secondsLeft = 60;
+        document.getElementById("timeRemaining").innerHTML = secondsLeft;
 }
 
-var button = document.querySelector("#button"); 
-console.log(button);
-button.addEventListener("click",startQuiz);
+//timer logic to count down by 1 second (1000 milliseconds), game will end when timer reaches 0
+
+countDown = setInterval(function () {
+    secondsLeft--;
+    document.getElementById("timeRemaining").innerHTML = secondsLeft;
+    if (secondsLeft <= 0) {
+        clearInterval(countDown);
+        endgame();
+    }
+}, 1000);
+
+//function to end the game by stopping the timer
+
+function endgame() {
+    clearInterval(countDown);
+}
+
+//add a function for next question
+
+
+
+//add on click event listener to button
+start.addEventListener("click", (e) => {
+    e.preventDefault();
+})
+
+
+
+
+    //display question and answers- using DOM manip.
+
+    // var firstQuestion = document.querySelector("#firstQuestion");
+    // firstQuestion.textContent = questions[0].question
+
+    // use queryselector for answers
+
+
+// var button = document.querySelector("#button"); 
+// console.log(button);
+// button.addEventListener("click",startQuiz);
