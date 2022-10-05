@@ -56,8 +56,6 @@ function endgame() {
 
 //add a function for next question
 
-
-
 //add on click event listener to button
 //timer logic to count down by 1 second (1000 milliseconds), game will end when timer reaches 0
 
@@ -73,9 +71,6 @@ startBtn.addEventListener("click", (e) => {
     }, 1000);
 })
 
-
-
-
     //display question and answers- using DOM manip.
 
     // var firstQuestion = document.querySelector("#firstQuestion");
@@ -83,7 +78,12 @@ startBtn.addEventListener("click", (e) => {
 
     // use queryselector for answers
 
+    // add if stmt for last question- way to end the game if timer is still running
 
-// var button = document.querySelector("#button"); 
-// console.log(button);
-// button.addEventListener("click",startQuiz);
+    // when game ends, user can input name for a high score
+
+    // create function for local storage to save high scores and name
+
+    // create function to reset the game, but saving the scores
+
+    // create function to raise score if answers are correct

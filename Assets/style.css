@@ -1,1 +1,11 @@
-/* remove bullet points */
+#title {
+    font-family: peralta;
+    color:darkviolet;
+    justify-content: center;
+    padding-inline-start: 1rem;
+}
+
+.startButton {
+    justify-content: center;
+    background-color: rgb(244, 209, 244);
+}
